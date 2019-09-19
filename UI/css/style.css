@@ -173,6 +173,20 @@ ul {
   opacity: 1;
   right: 0;
 }
+.btn_up_del input[type = button] {
+  border: none;
+  width: 100px;
+  background: #00A8A6;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 
   .timeline {
       width: 90%;
