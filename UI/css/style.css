@@ -1,0 +1,271 @@
+html,* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+    background: #D4DBF5;
+    /* background: #F2F2F2; */
+}
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
+a {
+  color: blue;
+}
+
+/* ############## NAVIGATION BAR ###################*/
+.app_name {
+    float: left;
+    font-size: 30px;
+    margin: 0px 30px 0px 30px;
+}
+.app_name strong {
+    color: #fff;
+}
+.app_name strong span {
+    color: royalblue;
+}
+ul {
+    list-style-type: none;
+}
+.navbar .log_reg a {
+    float: right;
+}
+
+/* Style the navigation bar */
+.navbar {
+    margin: auto;
+    width: 100%;
+    height: 70px;
+    background-color: darkslategray;
+    overflow: auto;
+}
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 25px 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    color: royalblue;
+    font-weight: bold;
+    background: #efc;
+  }
+  /* Current/active navbar link */
+  .active {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+  footer {
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+  }
+  .navbar {
+    height: auto;
+    width: 100%;
+  }
+  html, * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #aaa;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* ##### Button post ######## */
+.newPost button {
+  border: none;
+  width: 100px;
+  background: #00A8A6;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  /* margin: 10px auto; */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 70%;
+  display: block;
+}
+.newPost button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.newPost button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.newPost button:hover span {
+  padding-right: 25px;
+}
+
+.newPost button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+  .timeline {
+      width: 90%;
+      background: #fff;
+      border-style: solid;
+      border-color: #fff;
+      border-radius: 0.5em;
+      padding: 0.5em;
+      margin: 10px;
+  }
+  .timeline_profile {
+      width: 50%;
+      border-radius: 0.5em;
+  }
+  .timeline_profile ul li a {
+    color: green;
+    padding: 0.2em;
+  }
+  .timeline_profile img {
+      border-radius: 1.5em;
+      width: 20%;
+      height: 20%;
+  }
+  .timeline_profile span {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  main {
+    margin: auto;
+    width: 70%;
+    min-height: 520px;
+    padding: 10px;
+    /* background: #efc; */
+    background: #f2f2f2;
+  }
+  .newPost {
+    width: 100%;
+  }
+  .postArea {
+    height: 150px;
+  }
+  .postArea {
+    width: 90%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    margin: 10px;
+  }
+  .small_comment {
+      border-radius: 1em;
+      height: 35px;
+      width: 100%;
+      padding: 0.5em;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      resize: none;
+      margin: 10px auto;
+  }
+
+.abt_content {
+  width: 100%;
+}
+.abt_content img {
+  width: 100%;
+  height: 20%;
+}
+h1 {
+    color: #056CF2;
+}
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.notification_content {
+  background-color: #fff;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5em;
+  font-size: 18px;
+  color: green;
+  padding: 0.2em;
+  margin: 0.5em;
+}
+.notification_content a {
+  color: green;
+}
+.notification_content a:hover {
+  text-decoration: underline;
+}
