@@ -31,3 +31,14 @@ Teamwork is an internal social network for organizations’ employees. The goal 
 > A user is able to delete his articles when he desires.
 
 > Apart from sending messages to his friends, a user can also contact the system if he need any support. There is a link for that.
+
+## API Development
+
+#### Signup
+> A user can create an account
+
+> Data are saved in data structure
+
+> Method POST
+
+> It can be accessed through `api/v1/auth/signup`
