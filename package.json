@@ -1,0 +1,47 @@
+{
+  "name": "teamwork",
+  "version": "1.0.0",
+  "description": "A teamwork app",
+  "main": "server.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "@hapi/joi": "^16.1.4",
+    "babel": "^6.23.0",
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "underscore": "^1.9.1",
+    "use": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chriss50/Teamwork.git"
+  },
+  "author": "Ishimwe Christian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chriss50/Teamwork/issues"
+  },
+  "homepage": "https://github.com/Chriss50/Teamwork#readme"
+}
