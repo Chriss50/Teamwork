@@ -1,26 +1,29 @@
 const article_store = [
     {
-      id: '1',
-      authorId: '2',
+      articleId: 1,
+      createdOn: '',
       title: 'Egg: High quality protein',
       article: 'Did you know eggs have 6 grams of high-quality protein and that a protein packed breakfast helps sustain mental and physical energy throughout the day? That’s good news for people of any age!',
-      createdOn: ''
+      authorId: 2,
+      authorName: '',
     },
   
     {
-      id: '2',
-      authorId: '2',
+      articleId: 2,
+      createdOn: '',
       title: 'Improve developing level',
       article: 'Hello guys, do you know Andela is an African company that identifies and develops software developers, it extends engineering teams with the most talented software developers in Africa.',
-      createdOn: ''
+      authorId: 2,
+      authorName: 'Gaelle'
     },
   
     {
-      id: '3',
-      authorId: '2',
+      articleId: 3,
+      createdOn: '',
       title: 'Machine Learning',
       article: 'Machine learning is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions, relying on patterns and inference instead. It is seen as a subset of artificial intelligence.',
-      createdOn: ''
+      authorId: 2,
+      authorName: 'Benjamin'
     },
 
     {
