@@ -26,7 +26,7 @@ if (error)
     const token=jwt.sign({
         id:userCredentials.id, is_admin: userCredentials.is_admin
     },process.env.JWT,{
-        expiresIn:"24h"
+        expiresIn:'24h'
     });
     // omit password 
     // eslint-disable-next-line no-unused-vars
