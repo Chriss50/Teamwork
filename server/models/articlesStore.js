@@ -33,7 +33,20 @@ const article_store = [
       article: "A good book in all books",
       authorId: 1,
       authorName: "Ishimwe Christian"
-    }
+    },
+    {
+      articleId: 5,
+      createdOn: "2019-09-29T16:30:41+02:00",
+      title: "Football",
+      article: "The best distraction ever.",
+      authorId: 1,
+      authorName: "Ishimwe Christian"
+    },
+    // {
+    //   editedOn: "2019-09-29T16:37:03+02:00",
+    //   title: "Football",
+    //   article: "The best distraction ever!"
+    // }
   ];
   
   
