@@ -326,7 +326,7 @@ describe('Get/ all articles', () => {
 });
 
 describe('Get/Display an article ', () => {
-  it('It should return a specific article(200)   ', (done) => {
+  it('It should return a specific article(404)   ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -345,7 +345,7 @@ describe('Get/Display an article ', () => {
       .get('/api/v1/articles/4')
       .set('myToken', token)
       .end((err, res) => {
-        expect(res.status).to.equal(200);
+        expect(res.status).to.equal(404);
         done();
       });
   });
@@ -373,7 +373,7 @@ describe('Get/Display an article ', () => {
         done();
       });
   });
-  it('It should return only users allowed when admin try it(200)  ', (done) => {
+  it('It should return only users allowed when admin try it(404)  ', (done) => {
     const user = {
       id:4,
       firstName: 'Irakoze', 
@@ -392,7 +392,7 @@ describe('Get/Display an article ', () => {
       .get('/api/v1/articles/4')
       .set('myToken', token)
       .end((err, res) => {
-        expect(res.status).to.equal(200);
+        expect(res.status).to.equal(404);
         done();
       });
   });
