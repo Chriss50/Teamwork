@@ -14,4 +14,4 @@ app.use('/api/v1', routerArticles);
 
 
 app.listen(port, () => console.log(`Running on PORT ${port}`));
-module.exports = app;
+export default app;
