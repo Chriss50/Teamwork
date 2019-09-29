@@ -46,3 +46,4 @@ POST | `/api/v1/auth/signin`  | Employees can sign in
 POST | `api/v1/articles` | Employees can write and/or share articles
 PATCH | `api/v1/articles/{id}`| Employees can edit their articles
 DELETE | `api/v1/articles/{id}`| Employees can delete their articles
+POST | `api/v1/articles/{id}/comments`| Employees can comment on other colleagues' article post
