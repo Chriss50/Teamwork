@@ -32,10 +32,12 @@
     "coveralls": "^3.0.6",
     "eslint": "^6.4.0",
     "mocha": "^6.2.0",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "nyc": "^14.1.1"
   },
   "scripts": {
     "test": "mocha --require @babel/polyfill --require @babel/register --timeout 10000 ./server/tests/ --exit || exit 0",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon --exec babel-node server/server.js"
   },
   "repository": {

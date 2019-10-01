@@ -14,30 +14,26 @@
         <nav class="navbar">
             <div class="container">
                 <div class="app_name">
-                    <strong>Team<span>Work</span></strong>
+                    <a href="home.html" id="app_name"><strong>Team<span>Work</span></strong></a>
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="home.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="messages.html">Messages</a></li>
-                        <li><a href="#">Posts</a></li>
+                        <li><a href="profile.html" class="">Profile</a></li>
+                        <li><a href="create.html">Create Article</a></li>
+                        <li><a href="notifications.html" class="">Notifications</a></li>
                     </ul>
                 </div>
                 <div class="log_reg">
-                    <ul>
-                        <li><a href="#username" class="user_item">Username</a></li>
-                        <li><a href="profile.html" class="">Profile</a></li>
-                        <li><a href="#logout" class="">Logout</a></li>
-                    </ul>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-            <form>
-                <button class="btnNewMsg"><span>New Message</span></button>
+            <form id="msg">
+                <input type="text" class="small_comment" placeholder="email or username">
                 <div class="newMsg">
                     <textarea cols="10" rows="8"></textarea>
                     <div>
