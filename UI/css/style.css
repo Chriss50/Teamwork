@@ -112,6 +112,9 @@ ul {
     display: block;
     text-align: left;
   }
+  .navbar {
+    height: auto;
+  }
 }
 
   .dropdown {
@@ -210,6 +213,15 @@ ul {
       padding: 0.5em;
       margin: 10px;
   }
+  .timeline-spec {
+      width: 70%;
+      margin: 0.5em auto;
+      background: #fff;
+      border-style: solid;
+      border-color: #fff;
+      border-radius: 0.5em;
+      padding: 0.5em;
+  }
   .timeline_profile {
       width: 50%;
       border-radius: 0.5em;
@@ -282,9 +294,17 @@ p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
 }
-
+#not_main {
+  background: url(../assets/adults-brainstorming-business-1595385.jpg) no-repeat;
+}
+.notifications {
+  width: 100%;
+  margin: 0.5em auto;
+  width: 50%;
+  padding: 10px;
+}
 .notification_content {
-  background-color: #fff;
+  /* background-color: #fff; */
   width: 100%;
   height: auto;
   border-radius: 0.5em;
@@ -323,8 +343,8 @@ p {
   color: green;
 }
 
-.home_center {
-  margin-top: 15%;
+table {
+  margin-top: 7%;
 }
 .ed_post {
   margin-top: 20%;
@@ -341,8 +361,13 @@ p {
 #align_user {
   float: right;
 }
+.timeline_content {
+  padding-top:0.2em;
+}
 .timeline_content img {
   padding-top: 0.5em;
+  width: 100%;
+  height:auto;
 }
 #abt {
   margin-top: 8%;
@@ -356,4 +381,85 @@ p {
 }
 #contact {
   margin-top: 8%;
+}
+.single_post {
+  color:inherit;
+}
+.single_post:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.comments_field {
+  width: 100%;
+  height: auto;
+}
+#spec_art {
+  margin-top: 8%;
+}
+.all {
+  width: 20px;
+  height: 10px;
+  background: #f1f1f1;
+  border: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn_log {
+    width: 30%;
+    height: auto;
+    display: block;
+  }
+  .group {
+    margin-top: 40%;
+  }
+  table {
+    margin-top: 45%;
+  }
+  #user_name {
+    margin-left: 60%;
+  }
+  #prof_pic {
+    margin-left: 10px;
+  }
+  #time {
+    margin-left: 95%;
+  }
+  #align_user {
+    float: right;
+  }
+  .toughts {
+    width: auto;
+    height: 5%;
+  }
+  .toughts i {
+    font-size: 20px;
+
+  }
+}
+
+.category {
+  display: inline-block;
+  padding: 0.5em 0.3em;
+  border: 0.16em solid #fff;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  color: #00A8A6;
+  text-align: center;
+  transition: all 0.15s;
+  width: 40%;
+  height: auto;
+  /* background: #fff; */
+}
+.category:hover {
+  color: #bbb;
+  border-color: #bbb;
+}
+
+@media all and (max-width:30em) {
+  .category {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
