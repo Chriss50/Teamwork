@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../css/style.css" type="text/css" rel="stylesheet">
     <link href="../css/footer.css" type="text/css" rel="stylesheet">
-    <title>About TeamWork</title>
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -22,8 +22,6 @@
                         <li><a href="profile.html" class="">Profile</a></li>
                         <li><a href="create.html">Create Article</a></li>
                         <li><a href="notifications.html" class="">Notifications</a></li>
-                        <li><a href="login.html" class="">Login</a></li>
-                        <li><a href="signup.html" class="">Register</a></li>
                     </ul>
                 </div>
                 <div class="log_reg">
@@ -32,21 +30,21 @@
         </nav>
     </header>
     <main>
-        <section id="abt">
-            <h1 style="text-align: center; margin:auto;">Welcome to the TeamWork App</h1>
-            <div class="abt_content">
-                <h2>Teamwork is an internal social network for organizations’ employees. The goal of this
-                        application is to facilitate more interaction between colleagues and facilitate team bonding.</h2>
-                <img src="../assets/adolescent-connection-discussion-1595391.jpg" alt="team">
-                <p>
-                    It is an app which bring together workers of the same organisation and 
-                    help them in their dairly work as they collaborates in different things through the app.</p>
-                <img src="../assets/adult-brainstorming-colleagues-1181355.jpg" alt="team">
-                <p>
-                    You can still do your work while collaborating with others using the app. No need of stoping your job and go ask your fellow for any support as you can do it through the app.
-                </p>
+        <h1> Create a new Article </h1>
+        <form>
+            <div class="newPost">
+                <label id="title">Title</label><br/>
+                <input type="text" class="small_comment" id="title_field" placeholder="Title" required>
             </div>
-        </section>
+            <div class="newPost">
+                <label id="body">Body</label><br/>
+                <textarea class="postArea" name="post" required></textarea>
+            </div>
+            <div class="newPost">
+                <input type="file" name="cover_image">
+                <button><span>Post</span></button>
+            </div>
+        </form>
     </main>
     <footer>
         <div class="abt">
@@ -68,5 +66,6 @@
     
 
     <script src="../js/app.js"></script>
+    
 </body>
 </html>

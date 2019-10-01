@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Chriss50/Teamwork.svg?branch=develop)](https://travis-ci.org/Chriss50/Teamwork)
+[![Coverage Status](https://coveralls.io/repos/github/Chriss50/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/Chriss50/Teamwork?branch=develop)
+
 # Teamwork
 Teamwork is an internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding.
 
@@ -31,3 +34,16 @@ Teamwork is an internal social network for organizations’ employees. The goal 
 > A user is able to delete his articles when he desires.
 
 > Apart from sending messages to his friends, a user can also contact the system if he need any support. There is a link for that.
+
+## API endpoints
+
+The following endpoints have been implemented:
+
+HTTP METHOD | ENDPOINT | DESCRIPTION
+------------|---------------|-----------------------------------------
+POST | `/api/v1/auth/signup`  | Employees can create their own user account
+POST | `/api/v1/auth/signin`  | Employees can sign in
+POST | `api/v1/articles` | Employees can write and/or share articles
+PATCH | `api/v1/articles/{id}`| Employees can edit their articles
+DELETE | `api/v1/articles/{id}`| Employees can delete their articles
+POST | `api/v1/articles/{id}/comments`| Employees can comment on other colleagues' article post
