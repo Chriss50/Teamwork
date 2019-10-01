@@ -5,6 +5,10 @@ footer {
     height: 100px;
     width: 100%;
     padding-top: 0.5em;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    position: static;
 }
 footer a {
     color: #fff;

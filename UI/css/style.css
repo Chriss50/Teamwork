@@ -10,6 +10,7 @@ body {
 * {
     text-decoration: none;
     list-style-type: none;
+    transition: all 0.3s ease-in-out;
 }
 a {
   color: blue;
@@ -18,11 +19,12 @@ a {
 /* ############## NAVIGATION BAR ###################*/
 .app_name {
     float: left;
-    font-size: 30px;
-    margin: 0px 30px 0px 30px;
+    margin: 15px 20px auto 40px;
 }
 .app_name strong {
     color: #fff;
+    font-size: 30px;
+    padding-top: 10px;
 }
 .app_name strong span {
     color: royalblue;
@@ -30,9 +32,7 @@ a {
 ul {
     list-style-type: none;
 }
-.navbar .log_reg a {
-    float: right;
-}
+
 
 /* Style the navigation bar */
 .navbar {
@@ -41,24 +41,31 @@ ul {
     height: 70px;
     background-color: darkslategray;
     overflow: auto;
+    position: fixed;
+    top: 0px;
 }
   
   /* Navbar links */
   .navbar a {
-    float: left;
+    /* float: left; */
     text-align: center;
     padding: 25px 12px;
     color: white;
     font-weight: bold;
     text-decoration: none;
     font-size: 17px;
+    float: none;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   /* Navbar links on mouse-over */
   .navbar a:hover {
     color: royalblue;
     font-weight: bold;
-    background: #efc;
+    /* background: #efc; */
   }
   /* Current/active navbar link */
   .active {
@@ -75,8 +82,11 @@ ul {
   }
   footer {
     height: auto;
-    min-height: 200px;
+    min-height: 250px;
     width: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
   }
   .navbar {
     height: auto;
@@ -173,6 +183,9 @@ ul {
   opacity: 1;
   right: 0;
 }
+.newPost button span a {
+  color: #fff;
+}
 .btn_up_del input[type = button] {
   border: none;
   width: 100px;
@@ -201,14 +214,18 @@ ul {
       width: 50%;
       border-radius: 0.5em;
   }
+  .timeline_profile ul li a img {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+  .timeline_profile ul li a span {
+    align-items: flex-end;
+  }
   .timeline_profile ul li a {
     color: green;
     padding: 0.2em;
-  }
-  .timeline_profile img {
-      border-radius: 1.5em;
-      width: 20%;
-      height: 20%;
   }
   .timeline_profile span {
     font-size: 18px;
@@ -216,11 +233,10 @@ ul {
   }
 
   main {
-    margin: auto;
+    margin: 0.5em auto;
     width: 70%;
-    min-height: 520px;
+    min-height: 650px;
     padding: 10px;
-    /* background: #efc; */
     background: #f2f2f2;
   }
   .newPost {
@@ -282,4 +298,62 @@ p {
 }
 .notification_content a:hover {
   text-decoration: underline;
+}
+.menu ul li {
+  text-align: center;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.log_reg ul li {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.container {
+  overflow: hidden;
+  margin: auto;
+}
+.toughts i{
+  color: green;
+  padding: 0.5em;
+  font-size: 30px;
+}
+.toughts i:hover {
+  color: green;
+}
+
+.home_center {
+  margin-top: 15%;
+}
+.ed_post {
+  margin-top: 20%;
+}
+#user_name {
+  margin-right: 50px;
+}
+#prof_pic {
+  margin-left: 10px;
+}
+#time {
+  margin-left: 40px;
+}
+#align_user {
+  float: right;
+}
+.timeline_content img {
+  padding-top: 0.5em;
+}
+#abt {
+  margin-top: 8%;
+}
+#msg {
+  margin-top: 10%;
+}
+#notify {
+  margin-top: 8%;
+  text-align: center;
+}
+#contact {
+  margin-top: 8%;
 }
