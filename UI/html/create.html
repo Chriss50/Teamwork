@@ -20,8 +20,6 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="messages.html">Messages</a></li>
                         <li><a href="profile.html" class="">Profile</a></li>
-                        <li><a href="create.html">Create Article</a></li>
-                        <li><a href="notifications.html" class="">Notifications</a></li>
                     </ul>
                 </div>
                 <div class="log_reg">
@@ -30,21 +28,23 @@
         </nav>
     </header>
     <main>
-        <h1> Create a new Article </h1>
-        <form>
-            <div class="newPost">
-                <label id="title">Title</label><br/>
-                <input type="text" class="small_comment" id="title_field" placeholder="Title" required>
-            </div>
-            <div class="newPost">
-                <label id="body">Body</label><br/>
-                <textarea class="postArea" name="post" required></textarea>
-            </div>
-            <div class="newPost">
-                <input type="file" name="cover_image">
-                <button><span>Post</span></button>
-            </div>
-        </form>
+        <div id="create_field">
+            <h1> Create a new Article </h1>
+            <form>
+                <div class="newPost">
+                    <label id="title">Title</label><br/>
+                    <input type="text" class="post_title" id="title_field" placeholder="Title" required>
+                </div>
+                <div class="newPost">
+                    <label id="body">Body</label><br/>
+                    <textarea class="postArea" name="post" placeholder="Type the content of your article here!" required></textarea>
+                </div>
+                <div class="newPost">
+                    <input type="file" name="cover_image">
+                    <button><span>Post</span></button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <div class="abt">

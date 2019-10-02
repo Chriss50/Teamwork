@@ -3,6 +3,14 @@ html, * {
     margin: 0px;
     box-sizing: border-box;
 }
+.home_left {
+    width: 60%;
+    float: left;
+    margin-left: 5%;
+}
+.home_right {
+    overflow: hidden;
+}
 #homepage {
     width: 100%;
     min-height: 550px;
@@ -25,10 +33,13 @@ body {
     width: 100%;
     background-color: darkslategray;
     overflow: auto;
+    margin: auto;
+    height: 70px;
+    top: 0px;
 }
   
-  /* Navbar links */
-  .navbar a {
+/* Navbar links */
+.navbar a {
     float: left;
     text-align: center;
     padding: 12px;
@@ -36,10 +47,10 @@ body {
     font-weight: bold;
     text-decoration: none;
     font-size: 17px;
-  }
-  * {
-      text-decoration: none;
-  }
+}
+* {
+    text-decoration: none;
+}
   .app_name {
     float: left;
     margin: 0px 30px 0px 30px;
@@ -56,9 +67,8 @@ ul {
 }
 
 .imgs {
-    width: 60%;
+    width: 90%;
     height: 400px;
-    margin-left: 20%;
 }
 .mySlides {
     width: 100%;
@@ -71,7 +81,52 @@ p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
 }
-.home_content {
-    margin: auto 20%;
-}
 
+/* ################## signup ##################### */
+
+h2 {
+    color: #038C8C;
+}
+.group {
+    width: 70%;
+    margin: 20% auto;
+    padding: 10px;
+    background-color: rgb(164, 233, 164);
+    opacity: 0.9;
+}
+input {
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #038C8C;
+}
+input[type = submit] {
+    border: none;
+    width: 190px;
+    background: white;
+    color: #038C8C;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+input[type = submit]:hover {
+    color: #4CB1F7;
+    background-color: #038C8C;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#sign_up {
+    margin-top: 18%;
+}
