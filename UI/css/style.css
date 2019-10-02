@@ -82,7 +82,7 @@ ul {
   }
   footer {
     height: auto;
-    min-height: 500px;
+    min-height: 250px;
     width: 100%;
     left: 0px;
     right: 0px;
@@ -319,7 +319,24 @@ ul {
       resize: none;
       margin: 10px auto;
   }
-
+  .comments_field {
+    width: 100%;
+    height: auto;
+  }
+  .comments_block {
+    background: #f8f8f8;
+    height: auto;
+    width: 100%;
+    padding: 0.5em;
+    box-shadow: 0px 8px 16px 0px rgba(10, 77, 165, 0.5);
+    border-radius: 0.5em;
+  }
+  .comments_block ul {
+    padding: 0.5em;
+  }
+  .comments_block ul li p {
+    margin-left: 10%;
+  }
 .abt_content {
   width: 90%;
   padding-top: 0.5em;
@@ -444,10 +461,6 @@ table {
 .single_post:hover {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-.comments_field {
-  width: 100%;
-  height: auto;
-}
 #spec_art {
   margin-top: 8%;
 }
@@ -515,4 +528,69 @@ table {
   background-color: #f8f8f8;
   resize: none;
   margin: 10px auto;
+}
+
+/* Responsiveness nav */
+@media screen and (min-width: 360px) {
+  /* Mobile menu */
+  .menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 2;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+}
+.react #hit, .react a {
+  color: green;
+  padding-top: 0.2em;
+  padding-left: 10%;
+}
+#hit {
+  margin-left: 10%;
+}
+
+.profile {
+  width: 100%;
+  min-height: 20%;
+  margin-top: 10%;
+}
+#profile_img img {
+  width: 40%;
+  height: 40%;
+  float: left;
+  margin-left: 10%;
+  border-style: ridge;
+  box-shadow: 0px 8px 16px 0px rgba(26, 245, 6, 0.2);
+}
+#info {
+  overflow: hidden;
+  width: 30%;
+  padding-left: 2%;
+  box-shadow: 0px 8px 16px 0px rgba(26, 245, 6, 0.2);
+}
+#info:hover {
+  box-shadow: 0px 8px 16px 0px rgba(230, 255, 6, 0.2);
+}
+#info label {
+  color: #056CF2;
+  font-size: 100%;
+}
+#contents {
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
+  margin: 5%;
+  background: #00A8A6;
 }
