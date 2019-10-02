@@ -8,7 +8,7 @@ footer {
     bottom: 0px;
     right: 0px;
     left: 0px;
-    position: static;
+    position: relative;
 }
 footer a {
     color: #fff;
