@@ -1,5 +1,4 @@
 import express from 'express';
-import port from './config/port';
 import router from './routes/createuser';
 import routerArticles from './routes/articles';
 import dotenv from 'dotenv';
