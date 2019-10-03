@@ -9,6 +9,10 @@ const modify_article = async (req, res) => {
     if (error) {
       return response.responses(res, 422, null, true, error.details[0].message);
     }
+    const {is_admin: admin} = req.user;
+    if(admin) {
+      return response.responses(res,401, null, true, 'Only employees are allowed');
+    }
       const { id } = req.params;
       const { title, article } = req.body;
       const { id: author } = req.user;
