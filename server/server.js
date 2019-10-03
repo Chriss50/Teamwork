@@ -12,6 +12,8 @@ app.use('/api/v1', router);
 app.use('/api/v1', routerArticles);
 
 
+const port = process.env.PORT || 3000;  // Setting the port
+
 
 app.listen(port, () => console.log(`Running on PORT ${port}`));
 export default app;
