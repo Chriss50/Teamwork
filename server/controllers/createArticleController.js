@@ -8,7 +8,10 @@ const articleCreation = async (req, res) => {
     const { error } = validate(req.body);
     if (error)
       return response.responses(res, 403, null, true, error.details[0].message);
-
+    const {is_admin: admin} = req.user;
+    if(admin) {
+      return response.responses(res, 401, null, true, 'You are not allowed to create article, only employees');
+    }
 // Checking if the user is logged in
       const check = user_data.find((user) => user.id);
       if (!check)

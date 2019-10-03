@@ -94,6 +94,34 @@ describe('post/ Create a new article ', () => {
         done();
       });
   });
+  it('Should check if the admin tries to create the article(401)', (done) => {
+    const user = {
+      id:4,
+      firstName: 'Irakoze', 
+      lastName: 'Benithe', 
+      email: 'benithe@gmail.com',
+      password: '12345678',
+      gender: 'Female',
+      jobRole: 'Secretary',
+      department: 'Management',
+      address: 'Kigali',
+      is_admin: true
+    };
+    const newArticle = {
+      title: 'Hardworking',
+      article: 'When you are content to be simply yourself and dont compare or compete, everyone will respect you.',
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai
+      .request(app)
+      .post('/api/v1/articles')
+      .set('myToken', token)
+      .send(newArticle)
+      .end((err, res) => {
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
   it('Should check if all fields are filled as required(403)', (done) => {
     const user = {
       id:1,
@@ -237,18 +265,18 @@ describe('patch/ Employees can edit their articles', () => {
         done();
       });
   });
-  it('it should return only user author allowed to edit this article(401) ', (done) => {
+  it('Should return only author s posts are allowed to modify their articles (401) ', (done) => {
     const user = {
-      id:2,
-      firstName: 'Kalisa', 
-      lastName: 'Ben', 
-      email: 'kalisaben@gmail.com',
-      password: '123456',
-      gender: 'Male',
-      jobRole: 'Human Resource',
-      department: 'HR Department',
+      id:4,
+      firstName: 'Irakoze', 
+      lastName: 'Benithe', 
+      email: 'benithe@gmail.com',
+      password: '12345678',
+      gender: 'Female',
+      jobRole: 'Secretary',
+      department: 'Management',
       address: 'Kigali',
-      is_admin:false
+      is_admin: true
     };
     const newArticle = {
       title: "Bible",
@@ -280,22 +308,17 @@ describe('Get/ Employee can view all articles', () => {
       address: 'Kigali',
       is_admin: false
     };
-    const newArticle = {
-      title: 'Hardworking',
-      article: 'When you are content to be simply yourself and dont compare or compete, everyone will respect you.',
-    };
     const token = jwt.sign(user, process.env.JWT);
     chai
       .request(app)
       .get('/api/v1/feeds')
       .set('myToken', token)
-      .send(newArticle)
       .end((err, res) => {
         expect(res.status).to.equal(200);
         done();
       });
   });
-  it('it should return only users allowed to view the articles when admin tries(200) ', (done) => {
+  it('it should return only users allowed to view the articles when admin tries(401) ', (done) => {
     const user = {
       id:4,
       firstName: 'Irakoze', 
@@ -308,18 +331,13 @@ describe('Get/ Employee can view all articles', () => {
       address: 'Kigali',
       is_admin: true
     };
-    const newArticle = {
-      title: 'Hardworking',
-      article: 'When you are content to be simply yourself and dont compare or compete, everyone will respect you.',
-    };
     const token = jwt.sign(user, process.env.JWT);
     chai
       .request(app)
       .get('/api/v1/feeds')
       .set('myToken', token)
-      .send(newArticle)
       .end((err, res) => {
-        expect(res.status).to.equal(200);
+        expect(res.status).to.equal(401);
         done();
       });
   });
@@ -350,6 +368,29 @@ describe('Delete/ Employees can delete their articles ', () => {
         done();
       });
   });
+  it('Should not authorise the admin to delete unflagged article (401)', (done) => {
+    const user = {
+      id:4,
+      firstName: 'Irakoze', 
+      lastName: 'Benithe', 
+      email: 'benithe@gmail.com',
+      password: '12345678',
+      gender: 'Female',
+      jobRole: 'Secretary',
+      department: 'Management',
+      address: 'Kigali',
+      is_admin: true
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai 
+      .request(app)
+      .delete('/api/v1/articles/4')
+      .set('myToken', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
   it('if article does not exist return not found(404)  ', (done) => {
     const user = {
       id:1,
@@ -366,7 +407,7 @@ describe('Delete/ Employees can delete their articles ', () => {
     const token = jwt.sign(user, process.env.JWT);
     chai
     .request(app)
-      .delete('/api/v1/articles/45')
+      .delete('/api/v1/articles/30')
       .set('myToken', token)
       .end((err, res) => {
         expect(res.status).to.equal(404);

@@ -47,3 +47,5 @@ POST | `api/v1/articles` | Employees can write and/or share articles
 PATCH | `api/v1/articles/{id}`| Employees can edit their articles
 DELETE | `api/v1/articles/{id}`| Employees can delete their articles
 POST | `api/v1/articles/{id}/comments`| Employees can comment on other colleagues' article post
+GET | `api/v1/feeds`| Employees can view all articles, showing the most recently posted articles first
+GET | `api/v1/articles/{id}`|  Employees can view a specific article
