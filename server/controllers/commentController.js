@@ -9,19 +9,23 @@ import validate_comment from '../middleware/commentValidator';
 const create_comment = async (req, res) => {
     const { error } = validate_comment(req.body);
     if (error)
-        return response.responses(res, 404, null, true, error.details[0].message);
+        return response.responses(res, 401, null, true, error.details[0].message);
 
       const { id: userId } = req.user;
       const { id } = req.params;
       const { comment } = req.body;
       const current_article = await article_store.findIndex((findArticle) => findArticle.articleId === parseInt(id, 10));
+
+      const {is_admin: admin} = req.user;
+      if (admin) {
+        return response.responses(res, 401, null, true, 'You are not allowed to comment any article');
+      }
       if (current_article !== -1) {
         const { createdOn, title, article } = article_store[current_article];
         const postComment = {
           commentId: all_comments.length + 1,
           articleId: parseInt(id, 10),
-          authorId: userId,
-          commenteeId: id,
+          commenteeId: userId,
           comment,
         };
   
