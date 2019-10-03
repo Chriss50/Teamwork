@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('post/ Create a new article ', () => {
-  it('You must provide your Token(401) ', (done) => {
+  it('Should return unauthorised acess, you must provide your Token(401) ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -38,7 +38,7 @@ describe('post/ Create a new article ', () => {
         done();
       });
   });
-  it('it should return an invalid Token(401) ', (done) => {
+  it('Should return an invalid Token(401) ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -66,7 +66,7 @@ describe('post/ Create a new article ', () => {
         done();
       });
   });
-  it('new article is succesfully created(200) ', (done) => {
+  it('Should return new article succesfully created(200) ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -94,7 +94,7 @@ describe('post/ Create a new article ', () => {
         done();
       });
   });
-  it('It should check if all fields are fill as required(404)', (done) => {
+  it('Should check if all fields are filled as required(403)', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -118,11 +118,11 @@ describe('post/ Create a new article ', () => {
       .set('myToken', token)
       .send(newArticle)
       .end((err, res) => {
-        expect(res.status).to.equal(404);
+        expect(res.status).to.equal(403);
         done();
       });
   });
-  it('It should check an empty field(404) ', (done) => {
+  it('It should check an empty field(403) ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -146,13 +146,13 @@ describe('post/ Create a new article ', () => {
       .set('myToken', token)
       .send(newArticle)
       .end((err, res) => {
-        expect(res.status).to.equal(404);
+        expect(res.status).to.equal(403);
         done();
       });
   });
 });
 
-describe('patch/ Edit article', () => {
+describe('patch/ Employees can edit their articles', () => {
   it('It should not be edited when there is an empty field(422) ', (done) => {
     const user = {
       id:1,
@@ -266,7 +266,7 @@ describe('patch/ Edit article', () => {
       });
   });
 });
-describe('Get/ all articles', () => {
+describe('Get/ Employee can view all articles', () => {
   it('It should return list of articles(200) ', (done) => {
     const user = {
       id:1,
@@ -295,7 +295,7 @@ describe('Get/ all articles', () => {
         done();
       });
   });
-  it('it should return only users allowed to view the articles when admin try(200) ', (done) => {
+  it('it should return only users allowed to view the articles when admin tries(200) ', (done) => {
     const user = {
       id:4,
       firstName: 'Irakoze', 
@@ -325,80 +325,8 @@ describe('Get/ all articles', () => {
   });
 });
 
-describe('Get/Display an article ', () => {
-  it('It should return a specific article(404)   ', (done) => {
-    const user = {
-      id:1,
-      firstName: 'Ishimwe', 
-      lastName: 'Christian', 
-      email: 'ishic47@gmail.com',
-      password: '12345678',
-      gender: 'Male',
-      jobRole: 'Manager',
-      department: 'IT Department',
-      address: 'Kigali',
-      is_admin: false
-    };
-    const token = jwt.sign(user, process.env.JWT);
-    chai
-      .request(app)
-      .get('/api/v1/articles/4')
-      .set('myToken', token)
-      .end((err, res) => {
-        expect(res.status).to.equal(404);
-        done();
-      });
-  });
-
-  it('It should return article not found(404)  ', (done) => {
-    const user = {
-      id:1,
-      firstName: 'Ishimwe', 
-      lastName: 'Christian', 
-      email: 'ishic47@gmail.com',
-      password: '12345678',
-      gender: 'Male',
-      jobRole: 'Manager',
-      department: 'IT Department',
-      address: 'Kigali',
-      is_admin: false
-    };
-    const token = jwt.sign(user, process.env.JWT);
-    chai
-      .request(app)
-      .get('/api/v1/articles/20')
-      .set('myToken', token)
-      .end((err, res) => {
-        expect(res.status).to.equal(404);
-        done();
-      });
-  });
-  it('It should return only users allowed when admin try it(404)  ', (done) => {
-    const user = {
-      id:4,
-      firstName: 'Irakoze', 
-      lastName: 'Benithe', 
-      email: 'benithe@gmail.com',
-      password: '12345678',
-      gender: 'Female',
-      jobRole: 'Secretary',
-      department: 'Management',
-      address: 'Kigali',
-      is_admin: true
-    };
-    const token = jwt.sign(user, process.env.JWT);
-    chai
-      .request(app)
-      .get('/api/v1/articles/4')
-      .set('myToken', token)
-      .end((err, res) => {
-        expect(res.status).to.equal(404);
-        done();
-      });
-  });
-});
-describe('Delete/ users delete their own article ', () => {
-
+describe('Delete/ Employees can delete their articles ', () => {
+  
   it('It should delete an article(204)  ', (done) => {
     const user = {
       id:1,
@@ -437,18 +365,18 @@ describe('Delete/ users delete their own article ', () => {
     };
     const token = jwt.sign(user, process.env.JWT);
     chai
-      .request(app)
+    .request(app)
       .delete('/api/v1/articles/45')
       .set('myToken', token)
       .end((err, res) => {
         expect(res.status).to.equal(404);
         done();
       });
-  });
+    });
  
 });
-describe('post/ user comment on any article ', () => {
-  it('It should not allow admin to comment(404) ', (done) => {
+describe('post/ Employees can comment on other colleagues article post ', () => {
+  it('It should not allow admin to comment(401) ', (done) => {
     const user = {
       id:4,
       firstName: 'Irakoze', 
@@ -466,16 +394,16 @@ describe('post/ user comment on any article ', () => {
     };
     const token = jwt.sign(user, process.env.JWT);
     chai
-      .request(app)
+    .request(app)
       .post('/api/v1/articles/4/comments')
       .set('myToken', token)
       .send(addComment)
       .end((err, res) => {
-        expect(res.status).to.equal(404);
+        expect(res.status).to.equal(401);
         done();
       });
   });
-  it('It should not allow users to comment when field is empty(404) ', (done) => {
+  it('It should not allow users to comment when field is empty(401) ', (done) => {
     const user = {
       id:1,
       firstName: 'Ishimwe', 
@@ -498,10 +426,10 @@ describe('post/ user comment on any article ', () => {
       .set('myToken', token)
       .send(addComment)
       .end((err, res) => {
-        expect(res.status).to.equal(404);
+        expect(res.status).to.equal(401);
         done();
       });
-  });
+    });
   it('It should return article not found when a user comment for non existing article(404) ', (done) => {
     const user = {
       id:1,
@@ -547,12 +475,86 @@ describe('post/ user comment on any article ', () => {
     };
     const token = jwt.sign(user, process.env.JWT);
     chai
-      .request(app)
+    .request(app)
       .post('/api/v1/articles/2/comments')
       .set('myToken', token)
       .send(addComment)
       .end((err, res) => {
         expect(res.status).to.equal(201);
+        done();
+      });
+  });
+});
+
+
+describe('Get/ Employees can view a specific article ', () => {
+  it('Should return a specific article(200)   ', (done) => {
+    const user = {
+      id:1,
+      firstName: 'Ishimwe', 
+      lastName: 'Christian', 
+      email: 'ishic47@gmail.com',
+      password: '12345678',
+      gender: 'Male',
+      jobRole: 'Manager',
+      department: 'IT Department',
+      address: 'Kigali',
+      is_admin: false
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai
+      .request(app)
+      .get('/api/v1/articles/5')
+      .set('myToken', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        done();
+      });
+  });
+
+  it('It should return article not found(404)  ', (done) => {
+    const user = {
+      id:1,
+      firstName: 'Ishimwe', 
+      lastName: 'Christian', 
+      email: 'ishic47@gmail.com',
+      password: '12345678',
+      gender: 'Male',
+      jobRole: 'Manager',
+      department: 'IT Department',
+      address: 'Kigali',
+      is_admin: false
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai
+      .request(app)
+      .get('/api/v1/articles/20')
+      .set('myToken', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(404);
+        done();
+      });
+  });
+  it('Should return Unauthorised access when the admin tries to view the article(401)  ', (done) => {
+    const user = {
+      id:4,
+      firstName: 'Irakoze', 
+      lastName: 'Benithe', 
+      email: 'benithe@gmail.com',
+      password: '12345678',
+      gender: 'Female',
+      jobRole: 'Secretary',
+      department: 'Management',
+      address: 'Kigali',
+      is_admin: true
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai
+      .request(app)
+      .get('/api/v1/articles/4')
+      .set('myToken', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(401);
         done();
       });
   });

@@ -7,7 +7,7 @@ import user_data from '../models/userData';
 const articleCreation = async (req, res) => {
     const { error } = validate(req.body);
     if (error)
-      return response.responses(res, 404, null, true, error.details[0].message);
+      return response.responses(res, 403, null, true, error.details[0].message);
 
 // Checking if the user is logged in
       const check = user_data.find((user) => user.id);
