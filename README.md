@@ -11,7 +11,7 @@ Teamwork is an internal social network for organizations’ employees. The goal 
 
 > A user must have an account to use the system.
 
-> CSS files for styling the form.
+> CSS files for styling the form
 
 > A js file
 
