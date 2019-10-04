@@ -34,7 +34,7 @@
     "nyc": "^14.1.1"
   },
   "scripts": {
-    "test": "mocha --require @babel/polyfill --require @babel/register --timeout 10000 ./server/tests/ --exit || exit 0",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 100000 server/tests/ --exit",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon --exec babel-node server/server.js"
   },
