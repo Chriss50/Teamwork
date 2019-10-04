@@ -1,39 +1,43 @@
+# Teamwork
+
 [![Build Status](https://travis-ci.org/Chriss50/Teamwork.svg?branch=develop)](https://travis-ci.org/Chriss50/Teamwork)
 [![Coverage Status](https://coveralls.io/repos/github/Chriss50/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/Chriss50/Teamwork?branch=develop)
 
-# Teamwork
 Teamwork is an internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding
 
-## UI creation
+# **Technonlogies**
 
-### User have to register
-> In the the UI folder there is a sign up file to help the user create an account.
+- **Express JS** - API development framework
 
-> A user must have an account to use the system.
+- **Node** - run time environment for JavaScript
+- **Mocha and Chai** - for testing
+- **Eslint** - code analysis tool for identifying problematic patterns found in JavaScript code
+- **Babel JS** - JavaScript compiler (**ES6** to **ES5**)
 
-> CSS files for styling the form
+# **Requirements and Installation steps**
 
-> A js file.
+## **You need the following to be able to run the application**
 
-### User have to login
+[Node](https://nodejs.org/en/download/) a runtime environment for JavaScript
 
-> A login form have been created so that a registered user can enter to the system.
+[Postman](https://www.getpostman.com/downloads/) to test the Api endpoints
 
-> When a user forgot his password, he is able to recover it and be generated to his email address.
-### Homepage
+[Visual studio code](https://code.visualstudio.com/download) for editing and running the app
 
-> An index page added, it's where the user will find both login and sign up links.
+## **Clone the project**
+In your command line run the following codes:
+    
+    - git clone https://github.com/Chriss50/Teamwork.git
+    - npm install (to install required dependencies)
+  
+## **Testing**
 
-> A user is able of seeing others articles and react to them, it can be commenting, sharing, even liking those articles.
+    - npm test
 
-> A user is able to edit his own articles once they are shared.
+## **Start The Application**
 
-### Messages
-> A user also can send private messages to anyone with the account.
+     - npm start
 
-> A user is able to delete his articles when he desires.
-
-> Apart from sending messages to his friends, a user can also contact the system if he need any support. There is a link for that.
 
 ## API endpoints
 
@@ -49,3 +53,21 @@ DELETE | `api/v1/articles/{id}`| Employees can delete their articles
 POST | `api/v1/articles/{id}/comments`| Employees can comment on other colleagues' article post
 GET | `api/v1/feeds`| Employees can view all articles, showing the most recently posted articles first
 GET | `api/v1/articles/{id}`|  Employees can view a specific article
+
+You can use Postman to test the endpoints.
+
+### Some relevant links
+
+### 1. Gh-pages
+
+https://chriss50.github.io/Teamwork/UI/html/
+
+
+### 2. Pivotal Tracker
+
+https://www.pivotaltracker.com/n/projects/2397837
+
+
+
+## Author
+Ishimwe Christian
