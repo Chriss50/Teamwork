@@ -13,7 +13,7 @@ Teamwork is an internal social network for organizations’ employees. The goal 
 
 > CSS files for styling the form
 
-> A js file
+> A js file.
 
 ### User have to login
 
