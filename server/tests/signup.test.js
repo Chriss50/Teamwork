@@ -9,11 +9,11 @@ chai.should();
 
 
 describe('POST/signup ', () => {
-  it('User successfully created, it should return(401)', (done) => {
+  it('Should return user successfully created with a 201 status code', (done) => {
     const user = {
       firstName: "Byiringiro",
       lastName: "Jean Paul",
-      email: "jeanpaul@live.com",
+      email: "jeanpaul2@live.com",
       password: 'byiringiro',
       gender: "Male",
       jobRole: "Developer",
@@ -21,19 +21,18 @@ describe('POST/signup ', () => {
       address: "Kigali",
 
     };
-
     chai
       .request(app)
       .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(201);
         done();
       });
   });
 
 
-  it('should not register an already registered user(401)', (done) => {
+  it('should not register an already registered user(403)', (done) => {
     const user = {
       firstName: 'Ishimwe', 
       lastName: 'Christian', 
@@ -50,12 +49,12 @@ describe('POST/signup ', () => {
       .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(403);
         done();
       });
   });
 
-  it(' it should check if inputs required are correct(401)', (done) => {
+  it(' it should check if inputs required are correct(403)', (done) => {
     const user = {
       firstName: "Byiringiro",
       lastName: "Jean Paul",
@@ -72,7 +71,7 @@ describe('POST/signup ', () => {
       .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(403);
         done();
       });
   });

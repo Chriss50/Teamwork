@@ -9,14 +9,14 @@ dotenv.config();
 const createUser = async (req, res) => {
                 
 const { error } = validate(req.body); 
-if (error) return response.responses(res,401,null, true, error.details[0].message );
+if (error) return response.responses(res, 401, null, true, error.details[0].message );
 
   const {firstName, lastName, email, password, gender,
     jobRole, department, address, is_admin} = req.body;
 
 //   checking if the account exists in the system
   let checkUser = user_data.find(user => user.email === req.body.email);
-  if (checkUser) return response.responses(res,401,null, true, 'Email already exist' );
+  if (checkUser) return response.responses(res, 403, null, true, 'Email already exist' );
   
 //   Declaring a new user variables
   let newUser = {

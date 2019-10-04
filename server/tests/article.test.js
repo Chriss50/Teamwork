@@ -293,6 +293,34 @@ describe('patch/ Employees can edit their articles', () => {
         done();
       });
   });
+  it('Should reject if a user tries to edit other people article (401) ', (done) => {
+    const user = {
+      id: 5,
+      firstName: "Amanda",
+      lastName: "Alice",
+      email: "amanda@yahoo.fr",
+      password: '12345678',
+      gender: "Female",
+      jobRole: "Secretary",
+      department: "Accountant",
+      address: "Nyanza",
+      is_admin: false 
+    };
+    const newArticle = {
+      title: "Bible",
+      article: "A good book in all booksssss",
+    };
+    const token = jwt.sign(user, process.env.JWT);
+    chai
+      .request(app)
+      .patch('/api/v1/articles/4')
+      .set('myToken', token)
+      .send(newArticle)
+      .end((err, res) => {
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
 });
 describe('Get/ Employee can view all articles', () => {
   it('It should return list of articles(200) ', (done) => {

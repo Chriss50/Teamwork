@@ -8,7 +8,7 @@ chai.should();
 
 
 describe('POST/signin user ', () => {
-  it('it should return 401 for Invalid user email', (done) => {
+  it('it should return 404 for Invalid user email', (done) => {
     const user = {
       email: 'ishic477@gmail.com',
       password: '1234560',
@@ -24,7 +24,7 @@ describe('POST/signin user ', () => {
       });
   });
 
-  it('it should return 401 for invalid password', (done) => {
+  it('it should return 404 for invalid password', (done) => {
     const user = {
       email: 'ishic47@gmail.com',
       password: '0000045',
@@ -57,7 +57,7 @@ describe('POST/signin user ', () => {
   });
   it(' it should check if inputs required are correct', (done) => {
     const user = {
-      email: 'ishic47@gmail.',
+      email: 'ishic47@gmail',
       password: '12345678',
     };
 
@@ -66,7 +66,7 @@ describe('POST/signin user ', () => {
       .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(404);
         done();
       });
   });

@@ -13,14 +13,14 @@ if (error)
     return response.responses(res,401,null, true, error.details[0].message );
 
     // Comparing the entered email with the one in the storage
-    const userCredentials = user_data.find(user => user.email === req.body.email);
-    if (!userCredentials)
-        return response.responses(res,404,null, true, 'Invalid username' );
-
     // Checking if the passwords are the same
+    const userCredentials = user_data.find(user => user.email === req.body.email);
+    
+    if (!userCredentials)
+    return response.responses(res,404,null, true, 'Invalid Credentials' );
     const compare_password = await bcrypt.compare(req.body.password, userCredentials.password);
     if (!compare_password)
-        return response.responses(res,404,null, true, 'Invalid password' );
+        return response.responses(res,404,null, true, 'Invalid Credentials' );
 
     // Generating the token
     const token=jwt.sign({
